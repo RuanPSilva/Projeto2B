@@ -18,7 +18,7 @@ namespace Projeto2B.Repositorio
         {
             return _connection.CreateCommand();
         }
-        //Abre a conexao
+        //Fecha a conexao
         public void Dispose()
         {
             if (_connection != null && _connection.State == ConnectionState.Open)
@@ -27,6 +27,9 @@ namespace Projeto2B.Repositorio
                 _connection.Dispose();
             }
         }
+        
+
+
     }
 
 }
