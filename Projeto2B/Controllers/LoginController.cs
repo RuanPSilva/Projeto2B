@@ -32,7 +32,7 @@ namespace Projeto2B.Controllers
             if (usuario != null && usuario.Senha == senha)
             {
                 // Autenticação bem-sucedida
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Login", "Home");
             }
             //Caso contrário, ele adiciona um erro ao ModelState e retorna a visualização de login, exibindo a mensagem de erro.
             ModelState.AddModelError("", "Email ou senha inválidos.");
