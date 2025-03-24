@@ -22,6 +22,9 @@ namespace Projeto2B.Controllers
             return View();
 
         }
+
+
+        
         [HttpPost]
         public IActionResult Login(String email,string senha)
         {
@@ -32,7 +35,7 @@ namespace Projeto2B.Controllers
             if (usuario != null && usuario.Senha == senha)
             {
                 // Autenticação bem-sucedida
-                return RedirectToAction("Login", "Home");
+                return RedirectToAction("Index", "Home");
             }
             //Caso contrário, ele adiciona um erro ao ModelState e retorna a visualização de login, exibindo a mensagem de erro.
             ModelState.AddModelError("", "Email ou senha inválidos.");
@@ -41,10 +44,14 @@ namespace Projeto2B.Controllers
             return View();
 
         }
+        
+       
         public IActionResult Cadastro()
         {
             return View();
         }
+
+
         [HttpPost]
         public IActionResult Cadastro(Usuario usuario)
         {
